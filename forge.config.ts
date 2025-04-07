@@ -7,6 +7,11 @@ import { VitePlugin } from "@electron-forge/plugin-vite";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { MakerDMG } from "@electron-forge/maker-dmg";
+import { PublisherGithub } from "@electron-forge/publisher-github";
+import * as dotenv from "dotenv";
+
+// 加载环境变量
+dotenv.config();
 
 const config: ForgeConfig = {
   packagerConfig: {
@@ -24,6 +29,19 @@ const config: ForgeConfig = {
     new MakerZIP({}, ["darwin"]),
     // new MakerRpm({}),
     // new MakerDeb({}),
+  ],
+  publishers: [
+    new PublisherGithub({
+      repository: {
+        owner: "SoftpaseFar",
+        name: "vchat",
+      },
+      prerelease: false,
+      draft: true,
+      authToken: process.env.GITHUB_TOKEN,
+      releaseType: "release",
+      releaseNotes: "Initial release",
+    }),
   ],
   plugins: [
     new VitePlugin({
