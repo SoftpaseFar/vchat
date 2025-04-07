@@ -1,6 +1,10 @@
 # VChat
 
-VChat 是一个基于 Electron 和 Vue 3 开发的跨平台桌面聊天应用，支持多种 AI 模型接入，提供流畅的聊天体验。
+<p align="center">
+  <img src="assets/icon.png" alt="VChat Icon" width="128" height="128">
+  <br>
+  <em>VChat 是一个基于 Electron 和 Vue 3 开发的跨平台桌面聊天应用，支持多种 AI 模型接入，提供流畅的聊天体验。</em>
+</p>
 
 ![VChat Demo](assets/vchat.gif)
 
